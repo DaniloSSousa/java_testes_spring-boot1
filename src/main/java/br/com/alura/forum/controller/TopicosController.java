@@ -46,6 +46,7 @@ public class TopicosController {
     @Transactional
     public ResponseEntity<TopicoDto> create(@RequestBody @Valid TopicoDtoReceiver tdr, UriComponentsBuilder ucb) {    	
     	Curso c = cursoRepository.findByNome(tdr.getCurso());
+    	//Faltou tratar erro no campo autorId para notFound e usar .findById()
     	Usuario u = usuarioRepository.getOne(tdr.getAutorId());
     	Topico t = Topico.forTopico(tdr, c, u);
 
