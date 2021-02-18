@@ -29,6 +29,7 @@ public class Topico {
 	private Usuario autor;
 	@ManyToOne
 	private Curso curso;
+	// "topico" se refere ao nome do atributo na entidade proprietária de associação 'Resposta'
 	@OneToMany(mappedBy = "topico")
 	private List<Resposta> respostas = new ArrayList<>();
 
